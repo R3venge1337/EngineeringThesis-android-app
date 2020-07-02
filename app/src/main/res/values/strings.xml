@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Engineering Thesis</string>
+    <string name="select_language">Wybierz język</string>
+    <string name="image_app_3">Chłopak z słuchawkami mówiący wieloma językami</string>
+    <string name="image_app_2">Mała dziewczynka na tle języków</string>
+    <string name="description_app_main">Witaj w przygodzie nauki języków obcych!</string>
+    <string name="image_app">Zdjęcie z napisem learn english na zółtym tle</string>
+    <string name="language_image">Nazwa języka</string>
+    <string name="select_game_description">Gry edukacyjne</string>
+    <string name="findoutpicture_description">Find Out Picture</string>
+    <string name="select_and_adjust_description">Select and Adjust</string>
+    <string name="drag_and_drop_description">Drag and drop</string>
+    <string name="find_out_vocabulary_description">Find Out Vocabulary</string>
+    <string name="memory_game_description">Memory game</string>
+    <string name="category_title">Kategorie</string>
+    <string name="select_language_title">Wybór języka</string>
+</resources>
