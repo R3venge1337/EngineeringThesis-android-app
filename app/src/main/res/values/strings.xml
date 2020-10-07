@@ -7,11 +7,18 @@
     <string name="image_app">Zdjęcie z napisem learn english na zółtym tle</string>
     <string name="language_image">Nazwa języka</string>
     <string name="select_game_description">Gry edukacyjne</string>
-    <string name="findoutpicture_description">Find Out Picture</string>
+    <string name="find_out_picture_description">Find Out Picture</string>
     <string name="select_and_adjust_description">Select and Adjust</string>
     <string name="drag_and_drop_description">Drag and drop</string>
     <string name="find_out_vocabulary_description">Find Out Vocabulary</string>
     <string name="memory_game_description">Memory game</string>
     <string name="category_title">Kategorie</string>
-    <string name="select_language_title">Wybór języka</string>
+    <string name="select_language_title">Wybierz język</string>
+    <string name="select_category_title">Wybierz Kategorie</string>
+    <string name="navigation_drawer_menu_register">Rejestracja</string>
+    <string name="naviigation_drawer_menu_signup">Logowanie</string>
+    <string name="toolbar_sort">Sortuj</string>
+    <string name="navigation_drawer_open">Otwórz</string>
+    <string name="navigation_drawer_close">Zamknij</string>
+    <string name="game_icon">ikona gry</string>
 </resources>

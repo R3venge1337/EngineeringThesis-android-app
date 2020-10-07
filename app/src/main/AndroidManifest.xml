@@ -3,19 +3,17 @@
     package="com.example.engineeringthesis">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:largeHeap="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".GameActivity"></activity>
-        <activity android:name=".CategoryActivity" />
-        <activity android:name=".SelectLanguageActivity" />
+        android:theme="@style/CustomAppTheme"
+        >
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +21,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".GameActivity"
+            android:parentActivityName=".CategoryActivity"
+            />
+        <activity android:name=".CategoryActivity"
+            android:parentActivityName=".SelectLanguageActivity"
+            />
+        <activity android:name=".SelectLanguageActivity"
+            android:parentActivityName=".MainActivity"
+            />
+
     </application>
 
 </manifest>
