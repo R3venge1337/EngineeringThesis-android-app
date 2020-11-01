@@ -2,7 +2,7 @@ package com.example.engineeringthesis.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.fasterxml.jackson.annotation.JsonFormat
+import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
@@ -16,6 +16,7 @@ data class Language (
 
         @JsonProperty("languageId")
         @PrimaryKey(autoGenerate = true)
+        @JsonIgnore
         var languageId: Int,
 
         @JsonProperty("languageName")
@@ -24,7 +25,7 @@ data class Language (
         @JsonProperty("languageCreatedDate")
         @JsonSerialize(using = LocalDateTimeSerializer::class)
         @JsonDeserialize(using = LocalDateTimeDeserializer::class)
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+       // @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
         var  languageCreatedDate:LocalDateTime,
 
         @JsonProperty("isNew")
@@ -39,6 +40,9 @@ data class Language (
          */
 
 ){
+    constructor(languageName: String,languageCreatedDate:LocalDateTime,isNew: Boolean,isAccepted: Boolean)
+    :this(0,languageName,languageCreatedDate,isNew,isAccepted)
+
     override fun toString(): String {
         return "Language(languageId=$languageId, languageName='$languageName', languageCreatedDate=$languageCreatedDate, isNew=$isNew, isAccepted=$isAccepted)"
     }

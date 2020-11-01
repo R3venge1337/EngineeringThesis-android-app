@@ -8,10 +8,22 @@ import com.example.engineeringthesis.repository.LanguageRepository
 
 class LanguageViewModel(application: Application) : AndroidViewModel(application) {
     private val languageRepository: LanguageRepository
-    val allLanguages: LiveData<List<Language>>
-        get() = languageRepository.allLanguages
 
     init {
         languageRepository = LanguageRepository(application)
+    }
+
+    fun allLanguages(): LiveData<List<Language>>{
+        return languageRepository.allLanguages()
+    }
+
+    fun getLanguageByName(langName: String) : Language?
+    {
+        return languageRepository.getLanguageByName(langName)
+    }
+
+    fun saveLanguage(lang: Language)
+    {
+        return languageRepository.saveLanguage(lang)
     }
 }

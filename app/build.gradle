@@ -107,16 +107,13 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     //Rxjava
-    def reactiveandroid_version = "3.0.0"
-    def reactivejava_version = "3.0.4"
-    def addapterReactivejava_version = "2.9.0"
+    def rxjava3Version = "3.0.6"
+    def rxandroid_version = "3.0.0"
+    def adapterRxjava2_version = "2.9.0"
     def rxjava3AdapterVersion = "3.0.0"
-    implementation "io.reactivex.rxjava3:rxandroid:$reactiveandroid_version"
-    // Because RxAndroid releases are few and far between, it is recommended you also
-    // explicitly depend on RxJava's latest version for bug fixes and new features.
-    // (see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version)
-    implementation "io.reactivex.rxjava3:rxjava:$reactivejava_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava3:$addapterReactivejava_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$adapterRxjava2_version"
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava3Version"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
     implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$rxjava3AdapterVersion"
 
     //AndroidX lifecycle
@@ -136,6 +133,10 @@ dependencies {
 
     //Jackson
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.4")
+    //Android Preferencer
+    def preference_version = "1.1.1"
+    implementation "androidx.preference:preference:$preference_version"
+
 
 
 

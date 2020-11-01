@@ -1,8 +1,7 @@
 package com.example.engineeringthesis.di.module
 
-import com.example.engineeringthesis.CategoryActivity
-import com.example.engineeringthesis.GameActivity
-import com.example.engineeringthesis.MainActivity
+import com.example.engineeringthesis.*
+import com.example.engineeringthesis.utils.UserNameDialog
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,11 +9,29 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector
-    abstract fun  bindMainActivity(): MainActivity;
+    abstract fun  bindMainActivity(): MainActivity
 
     @ContributesAndroidInjector
-    abstract fun  bindCategoryActivity(): CategoryActivity;
+    abstract fun  bindCategoryActivity(): CategoryActivity
 
     @ContributesAndroidInjector
-    abstract fun  bindGameActivity(): GameActivity;
+    abstract fun bindLanguageActivity(): LanguageActivity
+
+    @ContributesAndroidInjector
+    abstract fun bindRegisterActivity(): RegisterActivitySelector
+
+    @ContributesAndroidInjector
+    abstract fun bindLoginActivity(): LoginActivity
+
+    @ContributesAndroidInjector
+    abstract fun bindChildRegisterActivity(): ChildRegisterActivity
+
+    @ContributesAndroidInjector
+    abstract fun bindTeacherdRegisterActivity(): TeacherRegisterActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindGameActivity(): GameActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindUserNameDialog(): UserNameDialog
 }

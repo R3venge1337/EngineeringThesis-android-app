@@ -9,10 +9,11 @@ import com.example.engineeringthesis.repository.GameRepository
 class GameViewModel(application: Application)  : AndroidViewModel(application) {
  private val gameRepository: GameRepository
 
- val allGames: LiveData<List<Game>>
-  get() = gameRepository.allGames
-
   init {
   gameRepository = GameRepository(application)
+  }
+
+ fun allGames(): LiveData<List<Game>> {
+   return gameRepository.allGames()
   }
 }

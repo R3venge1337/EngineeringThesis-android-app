@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
+    <group android:checkableBehavior="single">
     <item
         android:id="@+id/signup"
         android:title="@string/naviigation_drawer_menu_signup"
@@ -10,4 +11,5 @@
         android:id="@+id/register"
         android:title="@string/navigation_drawer_menu_register"
         app:showAsAction="ifRoom" />
+    </group>
 </menu>

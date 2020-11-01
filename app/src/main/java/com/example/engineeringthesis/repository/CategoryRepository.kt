@@ -13,11 +13,13 @@ import javax.inject.Inject
 class CategoryRepository @Inject constructor(application: Application?) {
     private val categoryDAO: CategoryDAO
     private var retrofitClient: Retrofit?
-    val allCategories: LiveData<List<Category>>
-        get() = LiveDataReactiveStreams.fromPublisher(categoryDAO.allCategories.subscribeOn(Schedulers.newThread()))
 
     init {
         retrofitClient= RetrofitClient.retrofit
         categoryDAO = retrofitClient!!.create(CategoryDAO::class.java)
+    }
+
+    fun allCategories(): LiveData<List<Category>> {
+        return LiveDataReactiveStreams.fromPublisher(categoryDAO.allCategories().subscribeOn(Schedulers.newThread()))
     }
 }

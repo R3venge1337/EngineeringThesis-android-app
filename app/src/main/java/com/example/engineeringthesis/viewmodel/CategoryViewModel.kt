@@ -8,10 +8,12 @@ import com.example.engineeringthesis.repository.CategoryRepository
 
 class CategoryViewModel(application: Application) : AndroidViewModel(application) {
     private val categoryRepository: CategoryRepository
-    val allCategories: LiveData<List<Category>>
-        get() = categoryRepository.allCategories
 
     init {
         categoryRepository = CategoryRepository(application)
+    }
+
+    fun allCategories(): LiveData<List<Category>> {
+        return categoryRepository.allCategories()
     }
 }

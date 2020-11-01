@@ -9,6 +9,6 @@ import retrofit2.http.GET
 @Dao
 interface GameDAO {
 
-    @get:GET("games")
-    val getAllGames : Flowable<List<Game>>
+    @GET("games")
+    fun getAllGames() : Flowable<List<Game>>
 }

@@ -12,7 +12,8 @@ import java.util.*
 
 open class CategoryAdapter(private val monCategoryListener: OnCategoryListener) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
     var categoryNames: List<Category> = ArrayList()
-    lateinit var categoryIcon: Array<Int>
+    //lateinit var categoryIcon: Array<Int>
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.select_category_list, parent, false)
         return ViewHolder(itemView, monCategoryListener)

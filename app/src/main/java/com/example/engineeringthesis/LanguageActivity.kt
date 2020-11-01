@@ -10,7 +10,7 @@ import com.example.engineeringthesis.adapter.SelectLanguageAdapter
 import com.example.engineeringthesis.adapter.SelectLanguageAdapter.OnLanguageListener
 import com.example.engineeringthesis.viewmodel.LanguageViewModel
 
-class SelectLanguageActivity : AppCompatActivity(), OnLanguageListener {
+class LanguageActivity : AppCompatActivity(), OnLanguageListener {
     private var languageViewModel: LanguageViewModel? = null
     var languagesFlag = arrayOf(R.drawable.ang_icon, R.drawable.niem_icon)
 
@@ -23,7 +23,7 @@ class SelectLanguageActivity : AppCompatActivity(), OnLanguageListener {
         recyclerView.setHasFixedSize(true)
         val languageAdapter = SelectLanguageAdapter(this)
         recyclerView.adapter = languageAdapter
-        languageViewModel!!.allLanguages.observe(this, { languages -> languageAdapter.setLanguagesList(languages) })
+        languageViewModel!!.allLanguages().observe(this, { languages -> languageAdapter.setLanguagesList(languages) })
     }
 
     override fun onLanguageClick(position: Int) {

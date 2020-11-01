@@ -24,10 +24,18 @@ class GameActivity : AppCompatActivity(),GameAdapter.onGameListener {
         val gameAdapter = GameAdapter(this)
         recyclerView.adapter = gameAdapter
         gameViewModel = ViewModelProvider(this).get(GameViewModel::class.java)
-        gameViewModel!!.allGames.observe(this, { game -> gameAdapter.setGameList(game) })
+        gameViewModel!!.allGames().observe(this, { game -> gameAdapter.setGameList(game) })
     }
 
     override fun onGameClick(position: Int) {
-      Toast.makeText(this,"Wybierz gre",Toast.LENGTH_LONG).show()
+        if(position == 0)
+        {
+            val selectFindoutPicture = Intent(this, FindOutPictureActivity::class.java)
+            startActivity(selectFindoutPicture)
+        }
+        else if(position == 1) Toast.makeText(this,"Wybrałes Find Out Vocabulary",Toast.LENGTH_SHORT).show()
+        else if(position == 2) Toast.makeText(this,"Wybrałes Drag And Drop",Toast.LENGTH_SHORT).show()
+        else if(position == 2) Toast.makeText(this,"Wybrałes Memory Game",Toast.LENGTH_SHORT).show()
+        else if(position == 4) Toast.makeText(this,"Wybrałes Select And Adjust ",Toast.LENGTH_SHORT).show()
     }
 }

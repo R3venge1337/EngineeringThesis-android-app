@@ -18,13 +18,13 @@ class CategoryActivity : AppCompatActivity(), OnCategoryListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
+        categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
         val recyclerView = findViewById<RecyclerView>(R.id.categoryRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         val categoryAdapter = CategoryAdapter(this)
         recyclerView.adapter = categoryAdapter
-        categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
-        categoryViewModel!!.allCategories.observe(this, { categories -> categoryAdapter.setCategoryNamesList(categories) })
+        categoryViewModel!!.allCategories().observe(this, { categories -> categoryAdapter.setCategoryNamesList(categories) })
     }
 
     override fun onCategoryClick(position: Int) {

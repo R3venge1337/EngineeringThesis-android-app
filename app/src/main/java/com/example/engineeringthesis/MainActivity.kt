@@ -4,16 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.engineeringthesis.utils.UserNameDialog
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.navigationdrawer.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class MainActivity : DaggerAppCompatActivity() {
 
+class MainActivity : DaggerAppCompatActivity(),UserNameDialog.UserNameDialogListener{
+    lateinit var userNameDialog : UserNameDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,20 +32,24 @@ class MainActivity : DaggerAppCompatActivity() {
         navigation_view.setNavigationItemSelectedListener { menuItem ->
             if(menuItem.itemId == R.id.signup)
             {
-                Toast.makeText(applicationContext,"logowanie",Toast.LENGTH_SHORT).show()
+                val loginActivity = Intent(this, LoginActivity::class.java)
+                startActivity(loginActivity)
             }
 
             if(menuItem.itemId == R.id.register)
             {
-                Toast.makeText(applicationContext,"rejestracja",Toast.LENGTH_SHORT).show()
+                val registerActivity = Intent(this, RegisterActivitySelector::class.java)
+                startActivity(registerActivity)
             }
             true
         }
 
         select_language_button.setOnClickListener {
-            val selectLang = Intent(this@MainActivity, SelectLanguageActivity::class.java)
+            val selectLang = Intent(this@MainActivity, LanguageActivity::class.java)
             startActivity(selectLang)
         }
+
+        openDialog()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -61,4 +67,26 @@ class MainActivity : DaggerAppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    fun openDialog()
+    {
+        userNameDialog = UserNameDialog()
+        userNameDialog.show(getSupportFragmentManager(), "Dialog")
+    }
+
+    override fun yesClicked(message: String) {
+       // val editor = getSharedPreferences(packageName + "_preferences", Context.MODE_PRIVATE).edit().putString("username",userNameDialog.edittext_dialog_username.text.toString())
+        //editor.apply()
+        //Log.e("Username",userNameDialog.edittext_dialog_username.text.toString())
+        Toast.makeText(this, "Nazwa użytkownika = " + message , Toast.LENGTH_LONG).show()
+    }
+
+    override fun noClicked(message: String) {
+        Toast.makeText(this, "Nazwa użytkownika = " + message, Toast.LENGTH_LONG).show()
+    }
+
+
+
+
+
 }

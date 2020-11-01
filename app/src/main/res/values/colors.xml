@@ -8,4 +8,7 @@
     <color name="colorActionBar">#98CBE2</color>
     <color name="colorActionButtons">#57BDDD</color>
     <color name="colorActionButtonsText">#000</color>
+    <color name="colorFormTitles">#000</color>
+    <color name="colorFormUnderlineEditext">#000</color>
+    <color name="colorForTitles">#000</color>
 </resources>

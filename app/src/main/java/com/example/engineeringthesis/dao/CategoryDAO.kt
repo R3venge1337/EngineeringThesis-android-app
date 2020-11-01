@@ -8,6 +8,6 @@ import retrofit2.http.GET
 @Dao
 interface CategoryDAO {
 
-    @get:GET("categories")
-    val allCategories: Flowable<List<Category>>
+    @GET("categories")
+    fun allCategories(): Flowable<List<Category>>
 }
