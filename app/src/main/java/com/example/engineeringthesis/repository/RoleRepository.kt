@@ -16,8 +16,6 @@ class RoleRepository @Inject constructor(application: Application?) {
     private val roleDAO: RoleDAO
     private var retrofitClient: Retrofit?
 
-
-
     init {
         retrofitClient= RetrofitClient.retrofit
         roleDAO = retrofitClient!!.create(RoleDAO::class.java)
