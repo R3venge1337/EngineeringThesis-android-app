@@ -1,9 +1,10 @@
 package com.example.engineeringthesis.model
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
-
+@Entity(tableName = "image")
 data class Image(
 
         @JsonProperty("imageId")
@@ -16,9 +17,6 @@ data class Image(
 
         @JsonProperty("imageFileTable")
         val  imageFileTable:ImageFileTable,
-
-        @JsonProperty("wordId")
-        var wordId:Word,
 
         @JsonProperty("isNew")
         var isNew: Boolean,

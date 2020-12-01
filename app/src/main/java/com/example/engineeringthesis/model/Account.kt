@@ -2,7 +2,6 @@ package com.example.engineeringthesis.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
@@ -12,9 +11,9 @@ import java.time.LocalDateTime
 
 @Entity(tableName = "account")
 data class Account(
+
         @JsonProperty("accountId")
         @PrimaryKey(autoGenerate = true)
-        @JsonIgnore
         var accountId: Int,
 
         @JsonProperty("accountName")

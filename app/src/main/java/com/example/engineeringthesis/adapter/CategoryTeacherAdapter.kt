@@ -7,11 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.engineeringthesis.R
-import com.example.engineeringthesis.model.Category
+import com.example.engineeringthesis.model.CategoryTeacher
 import java.util.*
 
-open class CategoryAdapter(private val monCategoryListener: OnCategoryListener) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
-    var categoryNames: List<Category> = ArrayList()
+open class CategoryTeacherAdapter(private val monCategoryListener: OnCategoryListener) : RecyclerView.Adapter<CategoryTeacherAdapter.ViewHolder>() {
+    var categoryNames: List<CategoryTeacher> = ArrayList()
     //lateinit var categoryIcon: Array<Int>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,8 +20,8 @@ open class CategoryAdapter(private val monCategoryListener: OnCategoryListener) 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val (_, categoryName) = categoryNames[position]
-        holder.nameCat.text = categoryName
+        //val (_, sd) = categoryNames[position]
+        holder.nameCat.text = categoryNames.get(position).categoryId.categoryName
         //holder.iconCat.setImageResource(categoryIcon[position]);
     }
 
@@ -29,8 +29,12 @@ open class CategoryAdapter(private val monCategoryListener: OnCategoryListener) 
         return categoryNames.size
     }
 
+    fun getItem(position: Int):CategoryTeacher
+    {
+       return  categoryNames.get(position)
+    }
 
-    fun setCategoryNamesList(catAdapterlist: List<Category>) {
+    fun setCategoryNamesList(catAdapterlist: List<CategoryTeacher>) {
         categoryNames = catAdapterlist
         notifyDataSetChanged()
     }

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.engineeringthesis">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
@@ -13,8 +15,12 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/CustomAppTheme">
-
+        android:theme="@style/CustomAppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".DragAndDropActivity"></activity>
+        <activity android:name=".viewmodel.DragAndDropActivity" />
+        <activity android:name=".FindOutVocabularyActvity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +41,8 @@
         <activity android:name=".RegisterActivitySelector" />
         <activity android:name=".TeacherRegisterActivity" />
         <activity android:name=".ChildRegisterActivity" />
-        <activity android:name=".FindOutPictureActivity"/>
+        <activity android:name=".FindOutPictureActivity" />
+        <activity android:name=".TeacherSelectionActivity" />
     </application>
 
 </manifest>

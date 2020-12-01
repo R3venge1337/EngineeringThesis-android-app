@@ -1,6 +1,11 @@
 package com.example.engineeringthesis.model
+import com.example.engineeringthesis.utils.OffsetDateTimeDesSerializer
+import com.fasterxml.jackson.annotation.JsonFormat
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
+import com.fasterxml.jackson.databind.annotation.JsonSerialize
+import com.fasterxml.jackson.datatype.jsr310.ser.OffsetDateTimeSerializer
 import java.time.OffsetDateTime
 
 data class ImageFileTable(
@@ -18,7 +23,7 @@ data class ImageFileTable(
         val  pathLocator:ByteArray,
 
         @JsonProperty("parentPathLocator")
-        val  parentPathLocator:ByteArray,
+        val  parentPathLocator:ByteArray?,
 
         @JsonProperty("fileType")
         val  fileType:String,
@@ -27,33 +32,48 @@ data class ImageFileTable(
         val  cachedFileSize:Long,
 
         @JsonProperty("creationTime")
+        @JsonSerialize(using = OffsetDateTimeSerializer::class)
+        @JsonDeserialize(using = OffsetDateTimeDesSerializer::class)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSXXX")
         val  creationTime: OffsetDateTime,
 
         @JsonProperty("lastWriteTime")
+        @JsonSerialize(using = OffsetDateTimeSerializer::class)
+        @JsonDeserialize(using = OffsetDateTimeDesSerializer::class)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSXXX")
         val  lastWriteTime: OffsetDateTime,
 
         @JsonProperty("lastAccessTime")
+        @JsonSerialize(using = OffsetDateTimeSerializer::class)
+        @JsonDeserialize(using = OffsetDateTimeDesSerializer::class)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSXXX")
         val  lastAccessTime: OffsetDateTime,
 
-        @JsonProperty("isNew")
+        @JsonProperty("new")
         val isNew: Boolean,
 
-        @JsonProperty("isOffline")
+        @JsonProperty("offline")
         val isOffline: Boolean,
 
-        @JsonProperty("isReadonly")
+        @JsonProperty("hidden")
+        val isHidden: Boolean,
+
+        @JsonProperty("readonly")
         val isReadonly: Boolean,
 
-        @JsonProperty("isArchive")
+        @JsonProperty("archive")
         val isArchive: Boolean,
 
-        @JsonProperty("isSystem")
+        @JsonProperty("system")
         val isSystem: Boolean,
 
-        @JsonProperty("isTemporary")
+        @JsonProperty("temporary")
         val isTemporary: Boolean
 ){
 
+    override fun toString(): String {
+        return "ImageFileTable(streamId='$streamId', fileStream=${fileStream.contentToString()}, imageFileTableName='$imageFileTableName', pathLocator=${pathLocator.contentToString()}, parentPathLocator=${parentPathLocator?.contentToString()}, fileType='$fileType', cachedFileSize=$cachedFileSize, creationTime=$creationTime, lastWriteTime=$lastWriteTime, lastAccessTime=$lastAccessTime, isNew=$isNew, isOffline=$isOffline, isHidden=$isHidden, isReadonly=$isReadonly, isArchive=$isArchive, isSystem=$isSystem, isTemporary=$isTemporary)"
+    }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -65,7 +85,10 @@ data class ImageFileTable(
         if (!fileStream.contentEquals(other.fileStream)) return false
         if (imageFileTableName != other.imageFileTableName) return false
         if (!pathLocator.contentEquals(other.pathLocator)) return false
-        if (!parentPathLocator.contentEquals(other.parentPathLocator)) return false
+        if (parentPathLocator != null) {
+            if (other.parentPathLocator == null) return false
+            if (!parentPathLocator.contentEquals(other.parentPathLocator)) return false
+        } else if (other.parentPathLocator != null) return false
         if (fileType != other.fileType) return false
         if (cachedFileSize != other.cachedFileSize) return false
         if (creationTime != other.creationTime) return false
@@ -73,6 +96,7 @@ data class ImageFileTable(
         if (lastAccessTime != other.lastAccessTime) return false
         if (isNew != other.isNew) return false
         if (isOffline != other.isOffline) return false
+        if (isHidden != other.isHidden) return false
         if (isReadonly != other.isReadonly) return false
         if (isArchive != other.isArchive) return false
         if (isSystem != other.isSystem) return false
@@ -86,7 +110,7 @@ data class ImageFileTable(
         result = 31 * result + fileStream.contentHashCode()
         result = 31 * result + imageFileTableName.hashCode()
         result = 31 * result + pathLocator.contentHashCode()
-        result = 31 * result + parentPathLocator.contentHashCode()
+        result = 31 * result + (parentPathLocator?.contentHashCode() ?: 0)
         result = 31 * result + fileType.hashCode()
         result = 31 * result + cachedFileSize.hashCode()
         result = 31 * result + creationTime.hashCode()
@@ -94,14 +118,11 @@ data class ImageFileTable(
         result = 31 * result + lastAccessTime.hashCode()
         result = 31 * result + isNew.hashCode()
         result = 31 * result + isOffline.hashCode()
+        result = 31 * result + isHidden.hashCode()
         result = 31 * result + isReadonly.hashCode()
         result = 31 * result + isArchive.hashCode()
         result = 31 * result + isSystem.hashCode()
         result = 31 * result + isTemporary.hashCode()
         return result
-    }
-
-    override fun toString(): String {
-        return "ImageFileTable(streamId='$streamId', fileStream=${fileStream.contentToString()}, imageFileTableName='$imageFileTableName', pathLocator=${pathLocator.contentToString()}, parentPathLocator=${parentPathLocator.contentToString()}, fileType='$fileType', cachedFileSize=$cachedFileSize, creationTime=$creationTime, lastWriteTime=$lastWriteTime, lastAccessTime=$lastAccessTime, isNew=$isNew, isOffline=$isOffline, isReadonly=$isReadonly, isArchive=$isArchive, isSystem=$isSystem, isTemporary=$isTemporary)"
     }
 }

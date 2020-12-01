@@ -4,17 +4,17 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.engineeringthesis.model.Account
 import com.example.engineeringthesis.model.Child
 import com.example.engineeringthesis.viewmodel.AccountViewModel
 import com.example.engineeringthesis.viewmodel.ChildViewModel
 import com.example.engineeringthesis.viewmodel.RoleViewModel
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_child_register.*
 import java.time.LocalDateTime
 
-class ChildRegisterActivity : AppCompatActivity() {
+class ChildRegisterActivity : DaggerAppCompatActivity() {
     private var childViewModel: ChildViewModel? = null
     private var accountViewModel: AccountViewModel? = null
     private var roleViewModel: RoleViewModel? = null

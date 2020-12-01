@@ -28,6 +28,10 @@ open class GameAdapter(private val monGameListener: GameAdapter.onGameListener) 
         return gameNames.size
     }
 
+    fun getItem(position: Int):Game
+    {
+       return  gameNames.get(position)
+    }
     
     fun setGameList(gamAdapterlist: List<Game>) {
         gameNames = gamAdapterlist

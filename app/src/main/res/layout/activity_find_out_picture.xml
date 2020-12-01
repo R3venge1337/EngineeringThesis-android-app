@@ -27,24 +27,42 @@
 
     <ImageView
         android:id="@+id/findOutPictureImageGame"
-        android:layout_width="110dp"
-        android:layout_height="108dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/find_out_picture_imageGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/findOutPictureTitle"
-        app:layout_constraintVertical_bias="0.146"
-        android:contentDescription="@string/find_out_picture_imageGame" />
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/findOutPictureShotsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shots_title"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431" />
 
     <TextView
         android:id="@+id/findOutPictureShots"
-        android:layout_width="117dp"
-        android:layout_height="14dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/findOutPictureImageGame" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toEndOf="@+id/findOutPictureShotsTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431" />
 
     <TextView
         android:id="@+id/findOutPictureFirstItem"
@@ -53,26 +71,29 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:layout_marginTop="44dp"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/findOutPictureShots"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/findOutPictureShots"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.084" />
 
     <RadioButton
         android:id="@+id/findOutPictureFirstAudio"
-        android:layout_width="49dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="54dp"
+        android:layout_height="58dp"
         android:button="@mipmap/ic_speaker_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
-        app:layout_constraintStart_toEndOf="@+id/findOutPictureFirstItem"
+        app:layout_constraintHorizontal_bias="0.249"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintVertical_bias="0.531" />
 
     <TextView
         android:id="@+id/findOutPictureSecondItem"
@@ -80,25 +101,29 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/findOutPictureSecondAudio"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintVertical_bias="0.555" />
 
     <RadioButton
         android:id="@+id/findOutPictureSecondAudio"
-        android:layout_width="49dp"
-        android:layout_height="55dp"
+        android:layout_width="54dp"
+        android:layout_height="58dp"
         android:button="@mipmap/ic_speaker_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintVertical_bias="0.536" />
 
     <TextView
         android:id="@+id/findOutPictureThirdItem"
@@ -106,25 +131,29 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/findOutPictureThirdAudio"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.676" />
 
     <RadioButton
         android:id="@+id/findOutPictureThirdAudio"
-        android:layout_width="49dp"
-        android:layout_height="55dp"
+        android:layout_width="54dp"
+        android:layout_height="58dp"
         android:button="@mipmap/ic_speaker_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintVertical_bias="0.686" />
 
     <TextView
         android:id="@+id/findOutPictureFourItem"
@@ -132,25 +161,29 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintHorizontal_bias="0.693"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintVertical_bias="0.666" />
 
     <RadioButton
         android:id="@+id/findOutPictureFourAudio"
-        android:layout_width="49dp"
-        android:layout_height="55dp"
+        android:layout_width="54dp"
+        android:layout_height="58dp"
         android:button="@mipmap/ic_speaker_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintVertical_bias="0.679" />
 
     <TextView
         android:id="@+id/findOutPictureInstruction"
@@ -170,7 +203,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
-        android:text="@string/instruction_game_description"
+        android:text="@string/find_out_picture_game_instruction"
         android:textColor="@color/colorActionButtonsText"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

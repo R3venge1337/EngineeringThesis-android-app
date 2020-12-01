@@ -25,13 +25,16 @@ class UserNameDialog()  : AppCompatDialogFragment() {
         alertDialogBuilder
                 .setCancelable(false)
                 .setPositiveButton("OK") { dialog, id -> // get user input and set it to result
+
                    val mess =  promptsView.edittext_dialog_username.text.toString()
                     listener.yesClicked(mess)
+
                 }
                 .setNegativeButton("Cancel"
                 ) { dialog, id -> //dialog.cancel()
                     val mess = "Empty"
                     listener.noClicked(mess)
+                    dialog.dismiss()
                 }
         return alertDialogBuilder.create()
     }

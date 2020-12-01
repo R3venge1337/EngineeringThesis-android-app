@@ -58,15 +58,17 @@ dependencies {
     def materialDes_version = "1.2.1"
     implementation "com.google.android.material:material:$materialDes_version"
 
+    def constraintLayoutVersion = "2.0.4"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    testImplementation 'junit:junit:4.13'
-
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation "androidx.cardview:cardview:1.0.0"
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    def cardviewVersion = "1.0.0"
+    implementation "androidx.cardview:cardview:$cardviewVersion"
+    def recyclerViewVersion = "1.1.0"
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
 
     //Retrofit + jackson
     def retrofitVersion = "2.9.0"
@@ -100,14 +102,14 @@ dependencies {
     testImplementation "android.arch.persistence.room:testing:$room_version"
 
     //Dagger 2
-    def dagger_version = "2.28.3"
+    def dagger_version = '2.29.1'
     implementation "com.google.dagger:dagger:$dagger_version"
     implementation "com.google.dagger:dagger-android:$dagger_version"
     implementation "com.google.dagger:dagger-android-support:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     //Rxjava
-    def rxjava3Version = "3.0.6"
+    def rxjava3Version = '3.0.7'
     def rxandroid_version = "3.0.0"
     def adapterRxjava2_version = "2.9.0"
     def rxjava3AdapterVersion = "3.0.0"
@@ -131,19 +133,30 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
+
     //Jackson
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.4")
+    implementation('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.3')
     //Android Preferencer
     def preference_version = "1.1.1"
-    implementation "androidx.preference:preference:$preference_version"
+    implementation "androidx.preference:preference-ktx:$preference_version"
+    def picasso2_okhttp3 = "1.1.0"
+    implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:$picasso2_okhttp3"
 
+    //Coil
+    // implementation('io.coil-kt:coil:1.0.0')
+    //Chucker
+   // debugImplementation "com.github.chuckerteam.chucker:library:3.4.1-SNAPSHOT"
+   // releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.4.1-SNAPSHOT"
 
-
+    //espresso
+    def espreeso = "3.3.0"
+    implementation group: 'androidx.test.espresso', name: 'espresso-core', version: "$espreeso"
 
 
 
 }
 repositories {
     maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     mavenCentral()
 }

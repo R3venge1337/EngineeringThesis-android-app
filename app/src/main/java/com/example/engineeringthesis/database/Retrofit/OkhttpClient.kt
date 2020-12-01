@@ -7,14 +7,14 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
+
 object OkhttpClient {
 
-    lateinit var jwtToken : Token
+    lateinit var jwtToken: Token
 
-    fun setToken(tok : Token)
-        {
-            this.jwtToken = tok
-        }
+    fun setToken(tok: Token) {
+        this.jwtToken = tok
+    }
 
     fun getUnsafeOkHttpClient(): OkHttpClient {
         // Create a trust manager that does not validate certificate chains
@@ -29,13 +29,14 @@ object OkhttpClient {
         })
 
         // Install the all-trusting trust manager
-        val sslContext = SSLContext.getInstance("SSL")
+        val sslContext = SSLContext.getInstance("TLS")
         sslContext.init(null, trustAllCerts, java.security.SecureRandom())
         // Create an ssl socket factory with our all-trusting manager
         val sslSocketFactory = sslContext.socketFactory
 
         return OkHttpClient.Builder()
                 .sslSocketFactory(sslSocketFactory, trustAllCerts[0] as X509TrustManager)
-                .hostnameVerifier { _, _ -> true }.build()
+                .hostnameVerifier { _, _ -> true }
+                .build()
     }
 }

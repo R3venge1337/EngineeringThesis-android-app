@@ -19,6 +19,10 @@ interface LanguageDAO {
     @GET("languages")
     fun getLanguageByName(@Query("languageName") languageName : String): Single<Language?>?
 
+    @GET("languages")
+    fun getLanguageById(@Query("languageId") languageId : Int): Single<Language?>?
+
+
     @POST("languages")
     fun saveLanguage(@Body lang : Language): Completable
 }

@@ -1,9 +1,10 @@
 package com.example.engineeringthesis.model
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
-
+@Entity(tableName = "audio")
 data class Audio (
 
         @JsonProperty("audioId")
@@ -16,9 +17,6 @@ data class Audio (
 
         @JsonProperty("audioDownloadUri")
         val audioDownloadUri :String,
-
-        @JsonProperty("wordId")
-        val wordId:Word,
 
         @JsonProperty("isNew")
         var isNew: Boolean,

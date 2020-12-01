@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.engineeringthesis.R
 import com.example.engineeringthesis.model.Language
-import com.example.engineeringthesis.utils.LiveDataErrorHandling
 import java.util.*
 
 class SelectLanguageAdapter(private val monLanguageListener: OnLanguageListener) : RecyclerView.Adapter<SelectLanguageAdapter.ViewHolder>() {
@@ -27,6 +26,11 @@ class SelectLanguageAdapter(private val monLanguageListener: OnLanguageListener)
 
     override fun getItemCount(): Int {
         return languageNames.size
+    }
+
+    fun getItem(position: Int):Language
+    {
+        return languageNames.get(position)
     }
 
     fun setLanguagesList(langAdapterlist: List<Language>) {

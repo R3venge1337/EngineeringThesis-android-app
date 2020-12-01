@@ -28,6 +28,11 @@ class LanguageRepository @Inject constructor(application: Application?) {
         return languageDAO.getLanguageByName(langName)?.subscribeOn(newThread())?.blockingGet()
     }
 
+    fun getLanguageById(langId : Int) : Language?
+    {
+        return languageDAO.getLanguageById(langId)?.subscribeOn(newThread())?.blockingGet()
+    }
+
     fun saveLanguage(lang:Language)
     {
          languageDAO.saveLanguage(lang).subscribeOn(newThread()).blockingAwait()

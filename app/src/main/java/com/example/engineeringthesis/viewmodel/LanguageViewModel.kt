@@ -22,6 +22,11 @@ class LanguageViewModel(application: Application) : AndroidViewModel(application
         return languageRepository.getLanguageByName(langName)
     }
 
+    fun getLanguageById(langId: Int) : Language?
+    {
+        return languageRepository.getLanguageById(langId)
+    }
+
     fun saveLanguage(lang: Language)
     {
         return languageRepository.saveLanguage(lang)

@@ -4,7 +4,6 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import com.example.engineeringthesis.model.Account
@@ -15,10 +14,11 @@ import com.example.engineeringthesis.viewmodel.AccountViewModel
 import com.example.engineeringthesis.viewmodel.LanguageViewModel
 import com.example.engineeringthesis.viewmodel.RoleViewModel
 import com.example.engineeringthesis.viewmodel.TeacherViewModel
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_teacher_register_actvity.*
 import java.time.LocalDateTime
 
-class TeacherRegisterActivity : AppCompatActivity() {
+class TeacherRegisterActivity : DaggerAppCompatActivity() {
     private var teacherViewModel: TeacherViewModel? = null
     private var accountViewModel:AccountViewModel? = null
     private var roleViewModel:RoleViewModel? = null

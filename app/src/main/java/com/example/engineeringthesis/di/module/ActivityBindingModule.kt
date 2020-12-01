@@ -34,4 +34,12 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector
     abstract fun  bindUserNameDialog(): UserNameDialog
+
+    @ContributesAndroidInjector
+    abstract fun  bindTeacherSelectionActivity(): TeacherSelectionActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindFindOutPictureActivity(): FindOutPictureActivity
+
+
 }

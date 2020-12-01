@@ -14,4 +14,5 @@ abstract  class AppModule
     @Singleton
     @ForApplication
     abstract fun  provideContext (application: Application) : Context
+
 }

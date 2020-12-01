@@ -2,10 +2,10 @@ package com.example.engineeringthesis
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_register_selector.*
 
-class RegisterActivitySelector : AppCompatActivity() {
+class RegisterActivitySelector : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_selector)

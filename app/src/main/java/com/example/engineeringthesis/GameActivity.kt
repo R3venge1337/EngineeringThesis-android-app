@@ -1,41 +1,79 @@
 package com.example.engineeringthesis
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.engineeringthesis.adapter.GameAdapter
+import com.example.engineeringthesis.model.Game
 import com.example.engineeringthesis.viewmodel.GameViewModel
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
 
-class GameActivity : AppCompatActivity(),GameAdapter.onGameListener {
-    private var gameViewModel: GameViewModel? = null
+class GameActivity : DaggerAppCompatActivity(),GameAdapter.onGameListener {
+
+    lateinit var gameViewModel: GameViewModel
+    lateinit var recyclerView:RecyclerView
+    lateinit var gameAdapter:GameAdapter
+    lateinit var game: Game
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences;
+    @Inject
+    lateinit var sharedPreferencesEditor: SharedPreferences.Editor;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
+        gameViewModel = ViewModelProvider(this).get(GameViewModel::class.java)
+        buildRecyclerView()
+        gameViewModel.allGames().observe(this, { game -> gameAdapter.setGameList(game) })
+    }
 
-
-        val recyclerView = findViewById<RecyclerView>(R.id.gameRecyclerView)
+    fun buildRecyclerView()
+    {
+        recyclerView = findViewById(R.id.gameRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-        val gameAdapter = GameAdapter(this)
+        gameAdapter = GameAdapter(this)
         recyclerView.adapter = gameAdapter
-        gameViewModel = ViewModelProvider(this).get(GameViewModel::class.java)
-        gameViewModel!!.allGames().observe(this, { game -> gameAdapter.setGameList(game) })
     }
 
     override fun onGameClick(position: Int) {
-        if(position == 0)
+        when(position)
         {
-            val selectFindoutPicture = Intent(this, FindOutPictureActivity::class.java)
-            startActivity(selectFindoutPicture)
+            0 -> {
+                game =  gameAdapter.getItem(position)
+                val selectFindoutPicture = Intent(this, FindOutPictureActivity::class.java)
+                startActivity(selectFindoutPicture)
+                //Toast.makeText(this,game.toString(),Toast.LENGTH_SHORT).show()
+            }
+            1 -> {
+                game =  gameAdapter.getItem(position)
+                val selectFindOutVocabulary = Intent(this, FindOutVocabularyActvity::class.java)
+                startActivity(selectFindOutVocabulary)
+                //Toast.makeText(this,game.toString(),Toast.LENGTH_SHORT).show()
+            }
+            2 -> {
+                game =  gameAdapter.getItem(position)
+                val selectDragAndDrop = Intent(this, DragAndDropActivity::class.java)
+                startActivity(selectDragAndDrop)
+                //Toast.makeText(this,game.toString(),Toast.LENGTH_SHORT).show()
+            }
+            3 -> {
+                game =  gameAdapter.getItem(position)
+                Toast.makeText(this,game.toString(),Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"Wybrałes Memory Game",Toast.LENGTH_SHORT).show()
+            }
+            4 -> {
+                game =  gameAdapter.getItem(position)
+                Toast.makeText(this,game.toString(),Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"Wybrałes Select And Adjust ",Toast.LENGTH_SHORT).show()
+            }
+
         }
-        else if(position == 1) Toast.makeText(this,"Wybrałes Find Out Vocabulary",Toast.LENGTH_SHORT).show()
-        else if(position == 2) Toast.makeText(this,"Wybrałes Drag And Drop",Toast.LENGTH_SHORT).show()
-        else if(position == 2) Toast.makeText(this,"Wybrałes Memory Game",Toast.LENGTH_SHORT).show()
-        else if(position == 4) Toast.makeText(this,"Wybrałes Select And Adjust ",Toast.LENGTH_SHORT).show()
+        sharedPreferencesEditor.putString("game_selected",game.gameName).apply()
     }
 }

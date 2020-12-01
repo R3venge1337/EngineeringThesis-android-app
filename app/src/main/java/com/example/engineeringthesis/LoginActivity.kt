@@ -3,16 +3,16 @@ package com.example.engineeringthesis
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.engineeringthesis.database.Retrofit.RetrofitClient
 import com.example.engineeringthesis.model.Token
 import com.example.engineeringthesis.viewmodel.AccountViewModel
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Retrofit
 
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : DaggerAppCompatActivity() {
     private var accountViewModel: AccountViewModel? = null
     var token: Token? = null
     private var retrofit: Retrofit = RetrofitClient.retrofit!!

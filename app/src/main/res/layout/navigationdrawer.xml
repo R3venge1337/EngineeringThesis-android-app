@@ -6,5 +6,6 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_gravity="start"
+    android:background="@color/colorAppBackground"
     app:menu="@menu/navigation_drawer_menu_list">
 </com.google.android.material.navigation.NavigationView>

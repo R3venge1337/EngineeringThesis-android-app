@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LanguageActivity"
+    android:background="@color/colorAppBackground"
     android:orientation="vertical">
     <include
         android:id="@+id/app_toolbar"
@@ -19,6 +20,7 @@
         android:layout_margin="12dp"
         android:layout_marginTop="8dp"
         android:text="@string/select_language_title"
+        android:textColor="@color/colorForTitles"
         android:layout_marginBottom="16dp"
         />
 

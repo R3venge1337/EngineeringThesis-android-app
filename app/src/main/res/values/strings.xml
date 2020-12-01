@@ -53,5 +53,11 @@
     <string name="find_out_picture_imageGame">Find Out Picture Zdjecie</string>
     <string name="find_out_picture_game_title">Find Out Picture</string>
     <string name="instruction_game_title">Instrukcja gry</string>
-    <string name="instruction_game_description">Wybierz słowo pasujące do obrazka</string>
+    <string name="find_out_picture_game_instruction">Wybierz słowo pasujące do obrazka</string>
+    <string name="select_teacher">Wybierz nauczyciela</string>
+    <string name="shots_title">Próby</string>
+    <string name="find_out_vocabulary_gameTitle">Find Out Vocabulary</string>
+    <string name="find_out_vocabulary_game_instruction">Wybierz obrazek pasujący do słowa</string>
+    <string name="drag_and_drop_gameTitle">Drag And Drop</string>
+    <string name="drag_and_drop_game_instruction">Przeciągnij zdjęcie w odpowiednie pole z napisem</string>
 </resources>
