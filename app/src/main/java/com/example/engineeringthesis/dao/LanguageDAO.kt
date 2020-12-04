@@ -22,7 +22,6 @@ interface LanguageDAO {
     @GET("languages")
     fun getLanguageById(@Query("languageId") languageId : Int): Single<Language?>?
 
-
     @POST("languages")
     fun saveLanguage(@Body lang : Language): Completable
 }

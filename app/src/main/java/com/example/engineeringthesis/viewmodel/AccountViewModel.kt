@@ -5,8 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import com.example.engineeringthesis.model.Account
 import com.example.engineeringthesis.model.Token
 import com.example.engineeringthesis.repository.AccountRepository
-import io.reactivex.rxjava3.schedulers.Schedulers
-import java.io.ByteArrayInputStream
 
 
 class AccountViewModel(application: Application) : AndroidViewModel(application){
@@ -34,5 +32,10 @@ class AccountViewModel(application: Application) : AndroidViewModel(application)
     fun getToken(): Token
     {
        return  accountRepository.getToken()
+    }
+
+    fun updateAccount(account: Account,accountId:Int)
+    {
+        accountRepository.updateAccount(account,accountId)
     }
 }

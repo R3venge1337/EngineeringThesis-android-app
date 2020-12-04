@@ -29,4 +29,16 @@ class TeacherRepository @Inject constructor(application: Application?) {
         return LiveDataReactiveStreams.fromPublisher(teacherDAO.getTeachersByLanguageName(languageName).subscribeOn(newThread()))
     }
 
+    fun  getTeacherWithAccountDetails(accountName : String) : Teacher
+    {
+       return teacherDAO.getTeacherWithAccount(accountName).subscribeOn(newThread()).blockingGet()
+    }
+
+    fun updateTeacher(teacher: Teacher,teacherId:Int)
+    {
+        teacherDAO.updateTeacher(teacher,teacherId).subscribeOn(newThread()).blockingAwait()
+    }
+
+
+
 }

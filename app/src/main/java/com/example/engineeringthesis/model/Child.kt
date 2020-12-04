@@ -10,7 +10,7 @@ data class Child(
         @JsonProperty("childId")
         @PrimaryKey(autoGenerate = true)
         @JsonIgnore
-        var childId: Int?,
+        var childId: Int,
 
         @JsonProperty("childName")
         var childName: String,

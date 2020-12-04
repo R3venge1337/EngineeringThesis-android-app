@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/AdminCreateTeacherAccount"
+        android:title="@string/admin_create_teacher_account_drawer_menu"
+        app:showAsAction="ifRoom" />
+    </group>
+    <item android:title="@string/logout_drawer_menu_title_item">
+        <menu>
+            <item android:id="@+id/admin_logout"
+                android:title="@string/logout_drawer_menu_item"
+                app:showAsAction="ifRoom"
+                />
+        </menu>
+    </item>
+</menu>

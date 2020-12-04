@@ -18,9 +18,6 @@ abstract class ActivityBindingModule {
     abstract fun bindLanguageActivity(): LanguageActivity
 
     @ContributesAndroidInjector
-    abstract fun bindRegisterActivity(): RegisterActivitySelector
-
-    @ContributesAndroidInjector
     abstract fun bindLoginActivity(): LoginActivity
 
     @ContributesAndroidInjector
@@ -40,6 +37,9 @@ abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector
     abstract fun  bindFindOutPictureActivity(): FindOutPictureActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindChildMyAccountActivity(): ChildMyAccountActivity
 
 
 }

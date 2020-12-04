@@ -18,9 +18,10 @@
         android:theme="@style/CustomAppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".DragAndDropActivity"></activity>
-        <activity android:name=".viewmodel.DragAndDropActivity" />
-        <activity android:name=".FindOutVocabularyActvity" />
+        <activity android:name=".TeacherMyAccountActvity"></activity>
+        <activity android:name=".ChildMyAccountActivity" />
+        <activity android:name=".SelectAndAdjustActvity" />
+        <activity android:name=".MemoryGameActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +44,8 @@
         <activity android:name=".ChildRegisterActivity" />
         <activity android:name=".FindOutPictureActivity" />
         <activity android:name=".TeacherSelectionActivity" />
+        <activity android:name=".DragAndDropActivity" />
+        <activity android:name=".FindOutVocabularyActvity" />
     </application>
 
 </manifest>

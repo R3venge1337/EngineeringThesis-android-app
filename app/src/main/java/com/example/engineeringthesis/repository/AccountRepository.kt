@@ -45,4 +45,10 @@ class AccountRepository @Inject constructor(application: Application?){
         return accountDAO.getToken().subscribeOn(newThread()).blockingGet()
     }
 
+    fun updateAccount(account:Account,accountId:Int)
+    {
+        return accountDAO.updateAccount(account,accountId).subscribeOn(newThread()).blockingAwait()
+    }
+
+
 }

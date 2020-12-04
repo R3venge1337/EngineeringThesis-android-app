@@ -60,4 +60,19 @@
     <string name="find_out_vocabulary_game_instruction">Wybierz obrazek pasujący do słowa</string>
     <string name="drag_and_drop_gameTitle">Drag And Drop</string>
     <string name="drag_and_drop_game_instruction">Przeciągnij zdjęcie w odpowiednie pole z napisem</string>
+    <string name="memory_game_title">Memory Game</string>
+    <string name="select_and_adjust_game_title">Select And Adjust</string>
+    <string name="memory_game_instruction_description">Znajdż parę tych samych słów lub zdjęc</string>
+    <string name="select_and_adjust_instruction_description">Przeciągnij słowo lub zdjęcie do jednego z pustych pól</string>
+    <string name="child_my_account_drawer_menu_item">Moje konto</string>
+    <string name="child_game_result_drawer_menu_item">Wyniki</string>
+    <string name="children_game_result_classification_drawer_menu_item">Ranking</string>
+    <string name="teacher_children_game_results_drawer_menu_item">Wyniki dzieci</string>
+    <string name="teacher_add_resources__drawer_menu_item">Dodaj zasoby</string>
+    <string name="admin_create_teacher_account_drawer_menu">Załóż konto nauczyciela</string>
+    <string name="logout_drawer_menu_item">Wyloguj</string>
+    <string name="logout_drawer_menu_title_item">Zarządzanie logowaniem</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_account_data_title">Dane Konta</string>
+    <string name="update_button_title">Edytuj</string>
 </resources>

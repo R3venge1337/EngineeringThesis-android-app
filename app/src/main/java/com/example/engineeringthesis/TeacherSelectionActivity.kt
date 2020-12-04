@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 class TeacherSelectionActivity : DaggerAppCompatActivity() , TeacherAdapter.OnTeacherListener {
 
-    private lateinit var teacherViewModel: TeacherViewModel
+    lateinit var teacherViewModel: TeacherViewModel
     lateinit var recyclerView:RecyclerView
     lateinit var teacherAdapter:TeacherAdapter
     @Inject

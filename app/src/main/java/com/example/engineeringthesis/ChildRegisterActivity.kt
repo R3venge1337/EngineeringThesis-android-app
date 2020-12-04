@@ -20,6 +20,8 @@ class ChildRegisterActivity : DaggerAppCompatActivity() {
     private var roleViewModel: RoleViewModel? = null
 
 
+
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +51,6 @@ class ChildRegisterActivity : DaggerAppCompatActivity() {
            // Toast.makeText(this,acc.toString(),Toast.LENGTH_LONG).show()
             childViewModel!!.saveChild(childObj)
             //Toast.makeText(this,childObj.toString(),Toast.LENGTH_LONG).show()
-
 
         }
 

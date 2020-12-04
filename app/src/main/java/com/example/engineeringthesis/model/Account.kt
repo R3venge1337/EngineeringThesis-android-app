@@ -32,7 +32,7 @@ data class Account(
         var accountEmail: String,
 
         @JsonProperty("role")
-        var role: Role,
+        var role: Role
 ) {
         constructor(accountName:String,accountPassword:String,accountCreatedDate:LocalDateTime,accountEmail:String,role:Role)
                 : this(0,accountName,accountPassword,accountCreatedDate,accountEmail,role)

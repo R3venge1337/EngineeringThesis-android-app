@@ -4,15 +4,15 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.engineeringthesis.database.Retrofit.OkhttpClient
 import com.example.engineeringthesis.database.Retrofit.PicassoClient
 import com.example.engineeringthesis.model.Word
 import com.example.engineeringthesis.viewmodel.WordViewModel
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_find_out_vocabulary_actvity.*
 
-class FindOutVocabularyActvity : AppCompatActivity() {
+class FindOutVocabularyActvity : DaggerAppCompatActivity() {
 
     private var wordViewModel: WordViewModel? = null
     private var shotsCounter = 0

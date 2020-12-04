@@ -24,7 +24,7 @@ class TeacherRegisterActivity : DaggerAppCompatActivity() {
     private var roleViewModel:RoleViewModel? = null
     private var languageViewModel:LanguageViewModel? = null
     private var  langList: LiveData<List<Language>>? = null
-
+    private  lateinit var getLang : Language
     @RequiresApi(Build.VERSION_CODES.O)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,20 +57,24 @@ class TeacherRegisterActivity : DaggerAppCompatActivity() {
             val account = Account(teacherUserName,teacherPassword, LocalDateTime.now(),teacherEmail,role)
             accountViewModel!!.saveAccount(account)
 
-           val lang  = langList?.value?.stream()?.filter { ls -> ls.equals(teacherLanguage)}?.findAny()?.get()
+           val lang : Language?  = langList?.value?.stream()?.filter { ls -> ls.equals(teacherLanguage)}?.findAny()?.get()
             if(lang == null)
             {
                 val saveNew = Language(0, teacherLanguage, LocalDateTime.now(), true, true)
                 languageViewModel!!.saveLanguage(saveNew)
+                getLang  = languageViewModel!!.getLanguageByName(teacherLanguage)!!
             }
-            val getLang = languageViewModel!!.getLanguageByName(teacherLanguage)
+            else
+            {
+                getLang  = languageViewModel!!.getLanguageByName(teacherLanguage)!!
+            }
+
             val acc = accountViewModel!!.getAccountByName(teacherUserName)
 
             val teacherObj = Teacher(teacherName,teacherSurname,teacherYearBirth.toShort(),teacherCity,
-                    teacherProfession,teacherAddress,teacherZipCode, getLang!!,acc)
+                    teacherProfession,teacherAddress,teacherZipCode, getLang,acc)
             Toast.makeText(this,teacherObj.toString(), Toast.LENGTH_LONG).show()
             teacherViewModel!!.saveTeacher(teacherObj)
-
 
 
 

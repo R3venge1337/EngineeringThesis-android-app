@@ -4,10 +4,8 @@ import androidx.room.Dao
 import com.example.engineeringthesis.model.Teacher
 import io.reactivex.Completable
 import io.reactivex.Flowable
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import io.reactivex.Single
+import retrofit2.http.*
 
 @Dao
 interface TeacherDAO {
@@ -17,6 +15,13 @@ interface TeacherDAO {
 
     @POST("teachers")
     fun saveTeacher(@Body teacher: Teacher): Completable
+
+    @GET("teachers/accounts")
+    fun getTeacherWithAccount(@Query("accountName") accountName : String): Single<Teacher>
+
+    @PUT("teachers/{teacherId}")
+    fun updateTeacher(@Body teacher: Teacher,
+                      @Path("teacherId") teacherId : Int): Completable
 
 
 }

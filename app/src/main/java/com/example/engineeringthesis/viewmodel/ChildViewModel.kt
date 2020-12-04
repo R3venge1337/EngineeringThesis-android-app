@@ -14,6 +14,18 @@ class ChildViewModel(application: Application) : AndroidViewModel(application) {
 
     fun saveChild(child: Child)
     {
-        childRepository.saveChild(child);
+        childRepository.saveChild(child)
     }
+
+    fun getChildWithAccountDetails(accountName:String) : Child
+    {
+        return childRepository.getChildWithAccountDetails(accountName)
+    }
+
+    fun updateChild(child: Child,childId:Int)
+    {
+        childRepository.updateChild(child,childId)
+    }
+
+
 }

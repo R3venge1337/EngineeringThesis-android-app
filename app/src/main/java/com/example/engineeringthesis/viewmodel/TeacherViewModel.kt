@@ -21,4 +21,16 @@ class TeacherViewModel(application: Application) : AndroidViewModel(application)
     {
        return teacherRepository.getTeachersByLanguageName(languageName)
     }
+
+    fun getTeacherWithAccountDetails(accountName : String) : Teacher
+    {
+       return  teacherRepository.getTeacherWithAccountDetails(accountName)
+    }
+
+    fun updateTeacher(teacher:Teacher,teacherId:Int)
+    {
+        teacherRepository.updateTeacher(teacher,teacherId)
+    }
+
+
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/teacherMyAccount"
+            android:title="@string/child_my_account_drawer_menu_item"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/teacherChildGameResults"
+            android:title="@string/child_game_result_drawer_menu_item"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/teacherChildrenGameResults"
+            android:title="@string/teacher_children_game_results_drawer_menu_item"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/teacherAddResources"
+            android:title="@string/teacher_add_resources__drawer_menu_item"
+            app:showAsAction="ifRoom" />
+
+    </group>
+    <item android:title="@string/logout_drawer_menu_title_item">
+        <menu>
+            <item
+                android:id="@+id/teacher_logout"
+                android:title="@string/logout_drawer_menu_item"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
+</menu>

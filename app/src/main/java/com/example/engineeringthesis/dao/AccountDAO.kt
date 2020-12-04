@@ -6,11 +6,7 @@ import com.example.engineeringthesis.model.Token
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
-
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 @Dao
 interface AccountDAO {
@@ -21,9 +17,12 @@ interface AccountDAO {
     @POST("accounts" )
     fun saveAccount(@Body account : Account): Completable
 
+    @PUT("accounts/{accountId}" )
+    fun updateAccount(@Body account : Account,
+                      @Path("accountId") accountId : Int): Completable
+
     @GET("accounts")
     fun getAccountByName(@Query("accountName") accountName : String): Single<Account>
-
 
     @GET("token")
     fun getToken(): Single<Token>

@@ -22,4 +22,14 @@ class ChildRepository @Inject constructor(application: Application?) {
         childDAO.saveChild(child).subscribeOn(newThread()).blockingAwait()
     }
 
+    fun getChildWithAccountDetails(accountName:String) : Child
+    {
+      return  childDAO.getChildWithAccount(accountName).subscribeOn(newThread()).blockingGet()
+    }
+
+    fun updateChild(child : Child,childId : Int)
+    {
+        childDAO.updateChild(child,childId).subscribeOn(newThread()).blockingAwait()
+    }
+
 }
