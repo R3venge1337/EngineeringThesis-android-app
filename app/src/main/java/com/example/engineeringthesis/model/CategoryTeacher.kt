@@ -1,15 +1,13 @@
 package com.example.engineeringthesis.model
 
 import androidx.room.PrimaryKey
-import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 
 data class CategoryTeacher(
 
         @JsonProperty("category_teacher_id_pk")
         @PrimaryKey(autoGenerate = true)
-        @JsonIgnore
-        var  categoryTeacherId:Int,
+        var categoryTeacherId:Int,
 
         @JsonProperty("categoryId")
         var categoryId:Category,
@@ -27,6 +25,6 @@ data class CategoryTeacher(
            this(0,categoryId,teacherId,isNew,isAccepted)
 
     override fun toString(): String {
-        return "CategoryTeacher(categoryTeacherId=$categoryTeacherId, categoryId=$categoryId, teacherId=$teacherId, isNew=$isNew, isAccepted=$isAccepted)"
+        return "categoryTeacherId=$categoryTeacherId, categoryId=$categoryId, teacherId=$teacherId, isNew=$isNew, isAccepted=$isAccepted"
     }
 }

@@ -15,11 +15,20 @@ class CategoryRepository @Inject constructor(application: Application?) {
     private var retrofitClient: Retrofit?
 
     init {
-        retrofitClient= RetrofitClient.retrofit
+        retrofitClient = RetrofitClient.retrofit
         categoryDAO = retrofitClient!!.create(CategoryDAO::class.java)
     }
 
     fun allCategories(): LiveData<List<Category>> {
         return LiveDataReactiveStreams.fromPublisher(categoryDAO.allCategories().subscribeOn(Schedulers.newThread()))
+    }
+
+    fun saveCategory(category: Category) {
+        categoryDAO.saveCategory(category).subscribeOn(Schedulers.newThread()).blockingAwait()
+    }
+
+    fun getCategory(categoryName:String): Category
+    {
+        return categoryDAO.getCategory(categoryName).subscribeOn(Schedulers.newThread()).blockingGet()
     }
 }

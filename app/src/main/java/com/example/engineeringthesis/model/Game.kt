@@ -2,7 +2,6 @@ package com.example.engineeringthesis.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 
 @Entity(tableName = "game")
@@ -10,7 +9,6 @@ data class Game(
 
         @JsonProperty("gameId")
         @PrimaryKey(autoGenerate = true)
-        @JsonIgnore
         var gameId: Int,
 
         @JsonProperty("gameName")

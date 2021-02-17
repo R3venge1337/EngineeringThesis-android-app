@@ -2,6 +2,7 @@ package com.example.engineeringthesis.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import com.example.engineeringthesis.model.Account
 import com.example.engineeringthesis.model.Token
 import com.example.engineeringthesis.repository.AccountRepository
@@ -19,6 +20,11 @@ class AccountViewModel(application: Application) : AndroidViewModel(application)
        accountRepository.saveAccount(account)
     }
 
+    fun getAllExpiresAccounts(accountExpiredAge : Int): LiveData<List<Account>>
+    {
+        return accountRepository.allExpiredAccounts(accountExpiredAge)
+    }
+
     fun getAccountByName(accountName : String): Account
     {
         return accountRepository.getAccountByName(accountName)
@@ -34,8 +40,12 @@ class AccountViewModel(application: Application) : AndroidViewModel(application)
        return  accountRepository.getToken()
     }
 
-    fun updateAccount(account: Account,accountId:Int)
+    fun updateAccount(accountId:Int,account: Account)
     {
-        accountRepository.updateAccount(account,accountId)
+        accountRepository.updateAccount(accountId,account)
+    }
+    fun deleteAccount(accountId : Int)
+    {
+        accountRepository.deleteAccount(accountId)
     }
 }

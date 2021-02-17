@@ -2,14 +2,13 @@ package com.example.engineeringthesis.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
+
 @Entity(tableName = "image")
 data class Image(
 
         @JsonProperty("imageId")
         @PrimaryKey(autoGenerate = true)
-        @JsonIgnore
         val imageId:Int,
 
         @JsonProperty("imageDownloadUri")

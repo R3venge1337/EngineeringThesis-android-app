@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAppBackground"
+    tools:context=".TeacherAddAudioActivity">
+    <TextView
+        android:id="@+id/teacher_add_audio_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:textColorHint="@color/colorFormTitles"
+        android:text="@string/teacher_add_audio_title"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColorHint="@color/colorForTitles"
+        app:errorEnabled="true">
+        <TextView
+            android:id="@+id/teacher_spinner_category_list"
+            android:hint="@string/spinner_select_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorForTitles"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColorHint="@color/colorForTitles"
+            app:errorEnabled="true">
+            <TextView
+                android:id="@+id/teacher_spinner_word_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textColorHint="@color/colorForTitles"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_drop_down_24"
+                android:hint="@string/spinner_select_word" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/teacher_audio_select_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:background="@color/colorActionButtons"
+            android:padding="5dp"
+            android:textColor="@color/colorActionButtonsText"
+            android:text="@string/teacher_audio_select_button" />
+        <MediaController
+            android:id="@+id/teacher_selected_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/teacher_add_audio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            android:background="@color/colorActionButtons"
+            android:padding="5dp"
+            android:textColor="@color/colorActionButtonsText"
+            android:text="@string/teacher_send_audio_button_title" />
+    </LinearLayout>
+</LinearLayout>

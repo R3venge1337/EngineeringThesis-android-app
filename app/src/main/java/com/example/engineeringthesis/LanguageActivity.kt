@@ -35,6 +35,7 @@ class LanguageActivity : DaggerAppCompatActivity(), OnLanguageListener {
         languageViewModel.allLanguages().observe(this, { languages -> languageAdapter.setLanguagesList(languages) })
     }
 
+
     fun buildRecyclerView()
     {
         recyclerView = findViewById<RecyclerView>(R.id.languageRecyclerView)
@@ -52,6 +53,10 @@ class LanguageActivity : DaggerAppCompatActivity(), OnLanguageListener {
         val intent = Intent(this, TeacherSelectionActivity::class.java)
         startActivity(intent)
         //Toast.makeText(this,jsonExamp.toString(),Toast.LENGTH_SHORT).show()
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        return
     }
 
 }

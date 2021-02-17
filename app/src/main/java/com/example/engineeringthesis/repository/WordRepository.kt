@@ -24,4 +24,22 @@ class WordRepository @Inject constructor(application: Application?) {
       return (wordDAO.getAllWordsFromCategory(categoryName,pageNumber,size).subscribeOn(Schedulers.newThread()))
     }
 
+    fun saveWord(word: Word)
+    {
+        wordDAO.saveWord(word).subscribeOn(Schedulers.newThread()).blockingAwait()
+    }
+
+    fun getWordById(wordId:Int):Word
+    {
+       return wordDAO.getWordById(wordId).subscribeOn(Schedulers.newThread()).blockingGet()
+    }
+    fun getWordByName(wordName:String):Word
+    {
+        return wordDAO.getWordByName(wordName).subscribeOn(Schedulers.newThread()).blockingGet()
+    }
+    fun updateWord(wordId:Int,wordObj:Word)
+    {
+        return wordDAO.updateWord(wordId,wordObj).subscribeOn(Schedulers.newThread()).blockingAwait()
+    }
+
 }

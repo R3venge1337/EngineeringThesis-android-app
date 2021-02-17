@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAppBackground"
+    tools:context=".AdminDeleteAccountsActivity">
+
+    <include
+        android:id="@+id/app_toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <TextView
+        android:id="@+id/select_account_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="12dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/accounts_to_delete_title"
+        android:textColor="@color/colorForTitles"
+        android:layout_marginBottom="16dp"
+        />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/accountRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/select_category_list"
+        />
+</ScrollView>
+</LinearLayout>

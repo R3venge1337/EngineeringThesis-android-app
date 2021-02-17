@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.engineeringthesis"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -37,6 +37,9 @@ android {
         viewBinding true
         dataBinding true
 
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -76,8 +79,6 @@ dependencies {
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-jackson:$retrofitVersion"
-    
-
 
     //Picasso
     def picassoVersion = "2.71828"
@@ -148,16 +149,37 @@ dependencies {
     //Chucker
    // debugImplementation "com.github.chuckerteam.chucker:library:3.4.1-SNAPSHOT"
    // releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.4.1-SNAPSHOT"
+    /*
+    //loggingInterceptor
+    def loggingInterceptor = "4.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptor"
+    */
+
+    // define a BOM and its version
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.0"))
+
+    // define any required OkHttp artifacts without version
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
 
     //espresso
     def espreeso = "3.3.0"
     implementation group: 'androidx.test.espresso', name: 'espresso-core', version: "$espreeso"
+    //GridLayout
+    def gridLayout = "1.0.0"
+    implementation "androidx.gridlayout:gridlayout:$gridLayout"
+    def hamcrestVersion = "1.3"
+    // Optional -- Hamcrest library
+    androidTestImplementation "org.hamcrest:hamcrest-library:$hamcrestVersion"
 
+    def toastyVersion = "1.5.0"
+    implementation "com.github.GrenderG:Toasty:$toastyVersion"
 
 
 }
 repositories {
     maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://jitpack.io" }
     mavenCentral()
 }

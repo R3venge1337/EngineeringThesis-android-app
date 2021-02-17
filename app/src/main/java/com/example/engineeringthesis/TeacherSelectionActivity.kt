@@ -24,20 +24,21 @@ class TeacherSelectionActivity : DaggerAppCompatActivity() , TeacherAdapter.OnTe
     lateinit var sharedPreferencesEditor: SharedPreferences.Editor;
     @Inject
     lateinit var jacksonMapper: ObjectMapper
+    private var doubleBackToExitPressedOnce = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teacher_selection)
         teacherViewModel = ViewModelProvider(this).get(TeacherViewModel::class.java)
         buildRecyclerView()
-        var languageReturned =  sharedPreferences.getString("language_selected","null").toString()
-        var langObject : Language = jacksonMapper.readValue(languageReturned,Language::class.java)
-        teacherViewModel.getTeachersByLanguageName(langObject.languageName).observe(this,{teacher -> teacherAdapter.setTeacherNamesList(teacher)})
+        var languageReturned =  sharedPreferences.getString("language_selected", "null").toString()
+        var langObject : Language = jacksonMapper.readValue(languageReturned, Language::class.java)
+        teacherViewModel.getTeachersByLanguageName(langObject.languageName).observe(this, { teacher -> teacherAdapter.setTeacherNamesList(teacher) })
     }
 
     fun buildRecyclerView()
     {
-        recyclerView = findViewById<RecyclerView>(R.id.teacherRecyclerView)
+        recyclerView = findViewById(R.id.teacherRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         teacherAdapter = TeacherAdapter(this)
@@ -47,9 +48,25 @@ class TeacherSelectionActivity : DaggerAppCompatActivity() , TeacherAdapter.OnTe
     override fun onTeacherClick(position: Int) {
         var teacher = teacherAdapter.getItem(position)
         var JsonObject = jacksonMapper.writeValueAsString(teacher)
-        sharedPreferencesEditor.putString("teacher_selected",JsonObject).apply()
+        sharedPreferencesEditor.putString("teacher_selected", JsonObject).apply()
         val intent = Intent(this, CategoryActivity::class.java)
         startActivity(intent)
         //Toast.makeText(this,teacher.toString(),Toast.LENGTH_SHORT).show()
+    }
+
+  /*
+    override fun onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+            return
+        }
+        this.doubleBackToExitPressedOnce = true
+        Toasty.info(this, "Naciśnij ponownie aby wyjść", Toast.LENGTH_SHORT).show()
+    }
+    */
+
+    override fun onBackPressed() {
+            super.onBackPressed()
+            return
     }
 }

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAppBackground"
+    android:orientation="vertical"
+    tools:context=".MemoryGameActivity">
+
+    <include
+        android:id="@+id/app_toolbar"
+        layout="@layout/toolbar" />
+
+
+    <TextView
+        android:id="@+id/memory_game_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="13dp"
+        android:gravity="center"
+        android:text="@string/memory_game_title"
+        android:textColor="@color/colorForTitles"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/app_toolbar"
+        app:layout_constraintVertical_bias="0.949">
+
+        <ImageView
+            android:id="@+id/fieldOne"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldOne" />
+
+        <ImageView
+            android:id="@+id/fieldTwo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldTwo" />
+
+        <ImageView
+            android:id="@+id/fieldThree"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldThree" />
+
+        <ImageView
+            android:id="@+id/fieldFour"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldFour" />
+
+        <ImageView
+            android:id="@+id/fieldFive"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldFive" />
+
+        <ImageView
+            android:id="@+id/fieldSix"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldSix" />
+
+        <ImageView
+            android:id="@+id/fieldSeven"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldSeven" />
+
+
+        <ImageView
+            android:id="@+id/fieldEight"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldEight" />
+
+        <ImageView
+            android:id="@+id/fieldNine"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldNine" />
+
+        <ImageView
+            android:id="@+id/fieldTen"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldTen" />
+
+        <ImageView
+            android:id="@+id/fieldEleven"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldEleven" />
+
+        <ImageView
+            android:id="@+id/fieldTwelve"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldTwelve" />
+
+        <ImageView
+            android:id="@+id/fieldThirteen"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldThirteen" />
+
+        <ImageView
+            android:id="@+id/fieldFourteen"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldFourteen" />
+
+        <ImageView
+            android:id="@+id/fieldFifteen"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldFifteen" />
+
+        <ImageView
+            android:id="@+id/fieldSixteen"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@color/cardview_dark_background"
+            android:contentDescription="fieldSixteen" />
+    </GridLayout>
+
+
+    <TextView
+        android:id="@+id/memoryGameShots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toEndOf="@+id/memoryGameShotsTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.469" />
+
+    <TextView
+        android:id="@+id/memoryGameTimeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_time_title"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <Chronometer
+        android:id="@+id/memoryGameTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="204dp"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toEndOf="@+id/memoryGameTimeTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <TextView
+        android:id="@+id/MemoryGameInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/instruction_game_title"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.675" />
+
+    <TextView
+        android:id="@+id/memoryGameShotsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shots_title"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.469" />
+
+    <TextView
+        android:id="@+id/MemoryGameInstructionDescription"
+        android:layout_width="280dp"
+        android:layout_height="57dp"
+        android:text="@string/memory_game_instruction_description"
+        android:textColor="@color/colorActionButtonsText"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gridLayout"
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.837" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

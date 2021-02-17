@@ -16,4 +16,14 @@ class CategoryTeacherViewModel(application: Application) : AndroidViewModel(appl
     {
         return categoryTeacherRepository.getAllCategoriesTeacher(teacherId)
     }
+
+    fun saveCategoryTeacher(categoryTeacher: CategoryTeacher)
+    {
+        categoryTeacherRepository.saveCategoryTeacher(categoryTeacher)
+    }
+
+    fun getAllCategoriesTeacherSingle(teacherId:Int): List<CategoryTeacher>
+    {
+        return  categoryTeacherRepository.getAllCategoriesTeacherSingle(teacherId)
+    }
 }

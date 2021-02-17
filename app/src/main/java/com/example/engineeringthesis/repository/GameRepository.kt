@@ -23,4 +23,8 @@ class GameRepository @Inject constructor(application: Application?){
         return LiveDataReactiveStreams.fromPublisher(gameDAO.getAllGames().subscribeOn(newThread()))
     }
 
+    fun allGamesSingle(): List<Game> {
+        return gameDAO.getAllGamesSingle().subscribeOn(newThread()).blockingGet()
+    }
+
 }

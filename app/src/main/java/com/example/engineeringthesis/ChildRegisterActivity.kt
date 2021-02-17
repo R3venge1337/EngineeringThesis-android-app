@@ -1,5 +1,6 @@
 package com.example.engineeringthesis
 
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -13,13 +14,18 @@ import com.example.engineeringthesis.viewmodel.RoleViewModel
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_child_register.*
 import java.time.LocalDateTime
+import javax.inject.Inject
 
 class ChildRegisterActivity : DaggerAppCompatActivity() {
     private var childViewModel: ChildViewModel? = null
     private var accountViewModel: AccountViewModel? = null
     private var roleViewModel: RoleViewModel? = null
 
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences;
 
+    @Inject
+    lateinit var sharedPreferencesEditor: SharedPreferences.Editor;
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -29,7 +35,7 @@ class ChildRegisterActivity : DaggerAppCompatActivity() {
         childViewModel = ViewModelProvider(this).get(ChildViewModel::class.java)
         accountViewModel = ViewModelProvider(this).get(AccountViewModel::class.java)
         roleViewModel = ViewModelProvider(this).get(RoleViewModel::class.java)
-        val role = roleViewModel!!.getRoleByName("ROLE_"+"dziecko")
+        val role = roleViewModel!!.getRoleByName("dziecko")
         register_child_Button.setOnClickListener {
             val childName = editText_child_name.text.toString()
             val childSurname = editText_child_surname.text.toString()
@@ -39,14 +45,13 @@ class ChildRegisterActivity : DaggerAppCompatActivity() {
             val childPassword =  editText_child_password.text.toString()
             val childEmail = editText_child_email.text.toString()
 
-
             val account = Account(childUserName,childPassword, LocalDateTime.now(),childEmail,role)
             accountViewModel!!.saveAccount(account)
 
            val acc = accountViewModel!!.getAccountByName(childUserName)
             Log.i("acc",acc.toString())
 
-            val childObj = Child(childName,childSurname,childYearBirth.toShort(),childCity,acc)
+            val childObj = Child(childName,childSurname,childYearBirth.toShort(),childCity,acc,sharedPreferences.getString("questUniqueId","").toString())
             Log.i("childObj",childObj.toString())
            // Toast.makeText(this,acc.toString(),Toast.LENGTH_LONG).show()
             childViewModel!!.saveChild(childObj)

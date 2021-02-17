@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAppBackground"
+    tools:context=".TeacherAddWordActivity">
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+    <TextView
+        android:id="@+id/teacher_add_word_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="@string/teacher_add_word_title"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:textColorHint="@color/colorFormTitles"
+            app:errorEnabled="true">
+            <EditText
+                android:id="@+id/editText_teacher_word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:autofillHints=""
+                android:gravity="center"
+                android:hint="@string/teacher_word_edittext_name"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColor="@color/colorForTitles"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/teacher_spinner_category_list"
+                android:hint="@string/spinner_select_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorForTitles"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/teacher_add_word_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            android:background="@color/colorActionButtons"
+            android:padding="5dp"
+            android:textColor="@color/colorActionButtonsText"
+            android:text="@string/teacher_send_word_button_title" />
+    </LinearLayout>
+</LinearLayout>

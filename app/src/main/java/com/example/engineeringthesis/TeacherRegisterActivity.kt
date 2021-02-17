@@ -44,8 +44,6 @@ class TeacherRegisterActivity : DaggerAppCompatActivity() {
             val teacherSurname = editText_teacher_surname.text.toString()
             val teacherYearBirth = editText_teacher_yearBirth.text.toString()
             val teacherCity = editText_teacher_city.text.toString()
-            val teacherAddress = editText_teacher_address.text.toString()
-            val teacherZipCode = editText_teacher_zipCode.text.toString()
             val teacherProfession = editText_teacher_profession.text.toString()
             val teacherLanguage = editText_teacher_language.text.toString()
             val teacherUserName =  editText_teacher_username.text.toString()
@@ -62,7 +60,7 @@ class TeacherRegisterActivity : DaggerAppCompatActivity() {
             {
                 val saveNew = Language(0, teacherLanguage, LocalDateTime.now(), true, true)
                 languageViewModel!!.saveLanguage(saveNew)
-                getLang  = languageViewModel!!.getLanguageByName(teacherLanguage)!!
+                getLang = languageViewModel!!.getLanguageByName(teacherLanguage)!!
             }
             else
             {
@@ -72,7 +70,7 @@ class TeacherRegisterActivity : DaggerAppCompatActivity() {
             val acc = accountViewModel!!.getAccountByName(teacherUserName)
 
             val teacherObj = Teacher(teacherName,teacherSurname,teacherYearBirth.toShort(),teacherCity,
-                    teacherProfession,teacherAddress,teacherZipCode, getLang,acc)
+                    teacherProfession,getLang,acc)
             Toast.makeText(this,teacherObj.toString(), Toast.LENGTH_LONG).show()
             teacherViewModel!!.saveTeacher(teacherObj)
 

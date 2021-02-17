@@ -1,14 +1,12 @@
 package com.example.engineeringthesis.model
 
 import androidx.room.PrimaryKey
-import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 
 data class StatisticType(
 
         @JsonProperty("statisticId")
         @PrimaryKey(autoGenerate = true)
-        @JsonIgnore
         var statisticId: Int,
 
         @JsonProperty("statisticName")

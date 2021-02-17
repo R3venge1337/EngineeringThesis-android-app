@@ -2,7 +2,6 @@ package com.example.engineeringthesis.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
@@ -16,7 +15,6 @@ data class Language (
 
         @JsonProperty("languageId")
         @PrimaryKey(autoGenerate = true)
-        @JsonIgnore
         var languageId: Int,
 
         @JsonProperty("languageName")
@@ -44,6 +42,6 @@ data class Language (
     :this(0,languageName,languageCreatedDate,isNew,isAccepted)
 
     override fun toString(): String {
-        return "Language(languageId=$languageId, languageName='$languageName', languageCreatedDate=$languageCreatedDate, isNew=$isNew, isAccepted=$isAccepted)"
+        return "languageId=$languageId, languageName=$languageName, languageCreatedDate=$languageCreatedDate, isNew=$isNew, isAccepted=$isAccepted"
     }
 }

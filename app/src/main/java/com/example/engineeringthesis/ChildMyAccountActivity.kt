@@ -51,14 +51,13 @@ class ChildMyAccountActivity : DaggerAppCompatActivity() {
             val childEmail = editText_child_email.text.toString()
 
             val accountDetailsUpdated = Account(childDetails!!.accountChildId.accountId,childUserName,childPassword, LocalDateTime.now(),childEmail,childAccount!!.role)
-            accountViewModel!!.updateAccount(accountDetailsUpdated,childDetails!!.accountChildId.accountId)
+            accountViewModel!!.updateAccount(childDetails!!.accountChildId.accountId,accountDetailsUpdated)
 
-            val childObj = Child(childDetails!!.childId,childName,childSurname,childYearBirth.toShort(),childCity,accountDetailsUpdated)
+            val childObj = Child(childDetails!!.childId,childName,childSurname,childYearBirth.toShort(),childCity,accountDetailsUpdated,null)
             Log.i("childObj",childObj.toString())
             // Toast.makeText(this,acc.toString(),Toast.LENGTH_LONG).show()
             childViewModel!!.updateChild(childObj,childDetails!!.childId)
             Toast.makeText(this,"Dziecko zostało  zaaktualizowane", Toast.LENGTH_SHORT).show()
-
         }
     }
 

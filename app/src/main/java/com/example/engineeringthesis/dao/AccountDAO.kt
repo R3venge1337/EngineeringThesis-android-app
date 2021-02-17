@@ -14,12 +14,16 @@ interface AccountDAO {
     @GET("accounts")
     fun allAccounts(): Flowable<List<Account>>
 
+    @GET("accounts")
+    fun allExpiredAccounts(@Query("accountExpiredAge") accountExpiredAge : Int): Flowable<List<Account>>
+
     @POST("accounts" )
     fun saveAccount(@Body account : Account): Completable
 
     @PUT("accounts/{accountId}" )
-    fun updateAccount(@Body account : Account,
-                      @Path("accountId") accountId : Int): Completable
+    fun updateAccount(@Path("accountId") accountId : Int,
+                      @Body account : Account
+                      ): Completable
 
     @GET("accounts")
     fun getAccountByName(@Query("accountName") accountName : String): Single<Account>
@@ -29,5 +33,8 @@ interface AccountDAO {
 
     @POST("authenticate" )
     fun authenticate(@Query("username") accountName : String,
-                    @Query("password") accountPassword : String): Completable
+                     @Query("password") accountPassword : String): Completable
+
+    @DELETE("accounts/{accountId}" )
+    fun deleteAccount(@Path("accountId") accountId : Int): Completable
 }

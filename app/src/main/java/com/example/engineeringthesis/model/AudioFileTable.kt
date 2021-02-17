@@ -2,7 +2,6 @@ package com.example.engineeringthesis.model
 
 import com.example.engineeringthesis.utils.OffsetDateTimeDesSerializer
 import com.fasterxml.jackson.annotation.JsonFormat
-import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
@@ -11,7 +10,6 @@ import java.time.OffsetDateTime
 
 data class AudioFileTable(
         @JsonProperty("streamId")
-        @JsonIgnore
         val  streamId:String,
 
         @JsonProperty("fileStream")
@@ -24,7 +22,7 @@ data class AudioFileTable(
         val  pathLocator:ByteArray,
 
         @JsonProperty("parentPathLocator")
-        val  parentPathLocator:ByteArray,
+        val  parentPathLocator:ByteArray?,
 
         @JsonProperty("fileType")
         val  fileType:String,

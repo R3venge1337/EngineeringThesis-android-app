@@ -6,6 +6,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".MyApp"
@@ -18,10 +23,6 @@
         android:theme="@style/CustomAppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".TeacherMyAccountActvity"></activity>
-        <activity android:name=".ChildMyAccountActivity" />
-        <activity android:name=".SelectAndAdjustActvity" />
-        <activity android:name=".MemoryGameActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,13 +40,45 @@
             android:name=".LanguageActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivitySelector" />
         <activity android:name=".TeacherRegisterActivity" />
         <activity android:name=".ChildRegisterActivity" />
-        <activity android:name=".FindOutPictureActivity" />
-        <activity android:name=".TeacherSelectionActivity" />
-        <activity android:name=".DragAndDropActivity" />
-        <activity android:name=".FindOutVocabularyActvity" />
+        <activity
+            android:name=".FindOutPictureActivity"
+            android:configChanges="screenSize"
+            android:parentActivityName=".GameActivity" />
+        <activity
+            android:name=".TeacherSelectionActivity"
+            android:parentActivityName=".LanguageActivity" />
+        <activity
+            android:name=".DragAndDropActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".GameActivity" />
+        <activity
+            android:name=".FindOutVocabularyActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".GameActivity" />
+        <activity android:name=".TeacherAddResourcesActivity" />
+        <activity android:name=".TeacherMyAccountActivity" />
+        <activity android:name=".ChildMyAccountActivity" />
+        <activity
+            android:name=".SelectAndAdjustActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".GameActivity" />
+        <activity
+            android:name=".MemoryGameActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".GameActivity" />
+        <activity android:name=".TeacherAddCategoryActivity" />
+        <activity android:name=".TeacherAddAudioActivity" />
+        <activity android:name=".TeacherAddImageActivity" />
+        <activity android:name=".TeacherAddWordActivity" />
+        <activity
+            android:name=".WinViewActivity"
+            android:parentActivityName=".GameActivity" />
+        <activity android:name=".AdminDeleteAccountsActivity" />
+        <activity android:name=".ChildResultsActivity" />
+        <activity android:name=".ChildButtRankActivity" />
+        <activity android:name=".ChildRankGameActivity"/>
     </application>
 
 </manifest>

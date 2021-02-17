@@ -28,7 +28,7 @@ class CategoryActivity : DaggerAppCompatActivity(), CategoryTeacherAdapter.OnCat
     lateinit var sharedPreferencesEditor: SharedPreferences.Editor;
     @Inject
     lateinit var jacksonMapper:ObjectMapper
-    var categoriesIcon = arrayOf(R.drawable.pilka, R.drawable.elektronika, R.drawable.muzyka)
+    //var categoriesIcon = arrayOf(R.drawable.pilka, R.drawable.elektronika, R.drawable.muzyka)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,5 +58,10 @@ class CategoryActivity : DaggerAppCompatActivity(), CategoryTeacherAdapter.OnCat
         startActivity(intent)
 
         //Toast.makeText(this, "Kategoria = " + cat.toString() , Toast.LENGTH_LONG).show()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        return
     }
 }

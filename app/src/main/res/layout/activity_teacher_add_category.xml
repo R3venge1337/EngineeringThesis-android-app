@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAppBackground"
+    tools:context=".TeacherAddCategoryActivity">
+    <include layout="@layout/toolbar"/>
+    <TextView
+        android:id="@+id/teacher_add_category_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="@string/teacher_add_category_panel_title"
+        android:textColor="@color/colorForTitles"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorForTitles"
+            app:errorEnabled="true"
+            android:padding="30dp">
+        <EditText
+            android:id="@+id/editText_teacher_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textColor="#000"
+            android:hint="@string/teacher_category_edittext_name"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:autofillHints="" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/teacher_add_category_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/teacher_send_category_button_title"
+            android:background="@color/colorActionButtons"
+            android:textColor="@color/colorActionButtonsText"
+            android:padding="5dp"
+            android:layout_margin="15dp"
+            android:layout_gravity="end" />
+    </LinearLayout>
+</LinearLayout>

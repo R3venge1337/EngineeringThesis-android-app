@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAppBackground"
+    tools:context=".ChildButtRankActivity">
+    <include
+        android:id="@+id/app_toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/child_rank_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/colorForTitles"
+        android:text="Wyniki"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/child_fop_rank_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:textColor="@color/colorActionButtonsText"
+        android:background="@color/colorActionButtons"
+        android:padding="5dp"
+        android:text="@string/find_out_picture_game_title" />
+
+    <Button
+        android:id="@+id/child_fov_rank_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:textColor="@color/colorActionButtonsText"
+        android:background="@color/colorActionButtons"
+        android:padding="5dp"
+        android:text="@string/find_out_vocabulary_gameTitle" />
+
+    <Button
+        android:id="@+id/child_dad_rank_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@color/colorActionButtons"
+        android:padding="5dp"
+        android:textColor="@color/colorActionButtonsText"
+        android:text="@string/drag_and_drop_gameTitle" />
+
+    <Button
+        android:id="@+id/child_mma_rank_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@color/colorActionButtons"
+        android:padding="5dp"
+        android:textColor="@color/colorActionButtonsText"
+        android:text="@string/memory_game_title" />
+
+    <Button
+        android:id="@+id/child_saa_rank_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@color/colorActionButtons"
+        android:padding="5dp"
+        android:textColor="@color/colorActionButtonsText"
+        android:text="@string/select_and_adjust_game_title" />
+
+
+</LinearLayout>

@@ -3,7 +3,6 @@ package com.example.engineeringthesis
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,7 +51,7 @@ class GameActivity : DaggerAppCompatActivity(),GameAdapter.onGameListener {
             }
             1 -> {
                 game =  gameAdapter.getItem(position)
-                val selectFindOutVocabulary = Intent(this, FindOutVocabularyActvity::class.java)
+                val selectFindOutVocabulary = Intent(this, FindOutVocabularyActivity::class.java)
                 startActivity(selectFindOutVocabulary)
                 //Toast.makeText(this,game.toString(),Toast.LENGTH_SHORT).show()
             }
@@ -64,16 +63,23 @@ class GameActivity : DaggerAppCompatActivity(),GameAdapter.onGameListener {
             }
             3 -> {
                 game =  gameAdapter.getItem(position)
-                Toast.makeText(this,game.toString(),Toast.LENGTH_SHORT).show()
+                val selectMemoryGame = Intent(this, MemoryGameActivity::class.java)
+                startActivity(selectMemoryGame)
                 //Toast.makeText(this,"Wybrałes Memory Game",Toast.LENGTH_SHORT).show()
             }
             4 -> {
                 game =  gameAdapter.getItem(position)
-                Toast.makeText(this,game.toString(),Toast.LENGTH_SHORT).show()
+                val selectGameSelectAndAdjust = Intent(this, SelectAndAdjustActivity::class.java)
+                startActivity(selectGameSelectAndAdjust)
                 //Toast.makeText(this,"Wybrałes Select And Adjust ",Toast.LENGTH_SHORT).show()
             }
 
         }
         sharedPreferencesEditor.putString("game_selected",game.gameName).apply()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        return
     }
 }

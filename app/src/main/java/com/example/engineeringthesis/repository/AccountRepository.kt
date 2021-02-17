@@ -25,6 +25,10 @@ class AccountRepository @Inject constructor(application: Application?){
         return LiveDataReactiveStreams.fromPublisher(accountDAO.allAccounts().subscribeOn(newThread()))
     }
 
+    fun allExpiredAccounts(accountExpiredAge : Int): LiveData<List<Account>> {
+        return LiveDataReactiveStreams.fromPublisher(accountDAO.allExpiredAccounts(accountExpiredAge).subscribeOn(newThread()))
+    }
+
     fun saveAccount(account:Account)
     {
         accountDAO.saveAccount(account).subscribeOn(newThread()).blockingAwait()
@@ -45,10 +49,15 @@ class AccountRepository @Inject constructor(application: Application?){
         return accountDAO.getToken().subscribeOn(newThread()).blockingGet()
     }
 
-    fun updateAccount(account:Account,accountId:Int)
+    fun updateAccount(accountId:Int,account:Account)
     {
-        return accountDAO.updateAccount(account,accountId).subscribeOn(newThread()).blockingAwait()
+        return accountDAO.updateAccount(accountId,account).subscribeOn(newThread()).blockingAwait()
     }
+    fun deleteAccount(accountId : Int)
+    {
+        return accountDAO.deleteAccount(accountId).subscribeOn(newThread()).blockingAwait()
+    }
+
 
 
 }

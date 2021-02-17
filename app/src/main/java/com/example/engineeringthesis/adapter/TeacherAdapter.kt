@@ -19,7 +19,7 @@ open class TeacherAdapter(private val monTeacherListener: TeacherAdapter.OnTeach
 
     override fun onBindViewHolder(holder: TeacherAdapter.ViewHolder, position: Int) {
         val teacher = teacherNamesList[position]
-        val teacherDataString = teacher.teacherName + " " + teacher.teacherSurname + " " + teacher.teacherCity + " "  + teacher.teacherYearBirth
+        val teacherDataString = teacher.teacherName + " " + teacher.teacherSurname
         holder.teacherName.text = teacherDataString
     }
 

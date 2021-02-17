@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveDataReactiveStreams
 import com.example.engineeringthesis.dao.CategoryTeacherDAO
 import com.example.engineeringthesis.database.Retrofit.RetrofitClient
 import com.example.engineeringthesis.model.CategoryTeacher
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.schedulers.Schedulers.newThread
 import retrofit2.Retrofit
 import javax.inject.Inject
 
@@ -19,9 +19,19 @@ class CategoryTeacherRepository @Inject constructor(application: Application?) {
         categoryTeacherDAO = retrofitClient!!.create(CategoryTeacherDAO::class.java)
     }
 
-    fun getAllCategoriesTeacher(teacherId:Int):LiveData<List<CategoryTeacher>>
+    fun getAllCategoriesTeacher(teacherId:Int): LiveData<List<CategoryTeacher>>
     {
-        return LiveDataReactiveStreams.fromPublisher(categoryTeacherDAO.getAllCategoriesTeacher(teacherId).subscribeOn(Schedulers.newThread()))
+        return LiveDataReactiveStreams.fromPublisher(categoryTeacherDAO.getAllCategoriesTeacher(teacherId).subscribeOn(newThread()))
     }
+
+    fun saveCategoryTeacher(categoryTeacher: CategoryTeacher)
+    {
+        categoryTeacherDAO.saveCategoryTeacher(categoryTeacher).subscribeOn(newThread()).blockingAwait()
+    }
+    fun getAllCategoriesTeacherSingle(teacherId:Int): List<CategoryTeacher>
+    {
+        return categoryTeacherDAO.getAllCategoriesTeacher(teacherId).subscribeOn(newThread()).blockingSingle()
+    }
+
 
 }

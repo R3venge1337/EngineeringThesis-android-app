@@ -7,6 +7,10 @@
         android:id="@+id/AdminCreateTeacherAccount"
         android:title="@string/admin_create_teacher_account_drawer_menu"
         app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/AdminDeleteAccounts"
+            android:title="@string/admin_delete_account_menu_title"
+            app:showAsAction="ifRoom" />
     </group>
     <item android:title="@string/logout_drawer_menu_title_item">
         <menu>

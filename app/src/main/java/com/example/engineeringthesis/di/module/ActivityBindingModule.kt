@@ -39,7 +39,52 @@ abstract class ActivityBindingModule {
     abstract fun  bindFindOutPictureActivity(): FindOutPictureActivity
 
     @ContributesAndroidInjector
+    abstract fun  bindFindOutVocabularyActivity(): FindOutVocabularyActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindDragAndDropActivity(): DragAndDropActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindMemoryGameActivity(): MemoryGameActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindSelectAndAdjust(): SelectAndAdjustActivity
+
+    @ContributesAndroidInjector
     abstract fun  bindChildMyAccountActivity(): ChildMyAccountActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindTeacherMyAccountActivity(): TeacherMyAccountActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindTeacherAddResourcesActivity():TeacherAddResourcesActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindTeacherAddCategoryActivity():TeacherAddCategoryActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindTeacherAddWordActivity():TeacherAddWordActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindTeacherAddImageActivity():TeacherAddImageActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindTeacherAddAudioActivity():TeacherAddAudioActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindWinViewActivity(): WinViewActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindAdminDeleteAccountsActivity():  AdminDeleteAccountsActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindChildResultsActivity(): ChildResultsActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindChildButtRankActivity(): ChildButtRankActivity
+
+    @ContributesAndroidInjector
+    abstract fun  bindChildRankGameActivity(): ChildRankGameActivity
 
 
 }

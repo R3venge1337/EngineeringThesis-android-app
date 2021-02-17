@@ -16,4 +16,7 @@ class GameViewModel(application: Application)  : AndroidViewModel(application) {
  fun allGames(): LiveData<List<Game>> {
    return gameRepository.allGames()
   }
+ fun allGamesSingle(): List<Game> {
+  return gameRepository.allGamesSingle()
+ }
 }

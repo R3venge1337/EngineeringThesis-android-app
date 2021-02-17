@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorAppBackground"
-    tools:context=".TeacherMyAccountActvity">
+    tools:context=".TeacherMyAccountActivity">
 
     <include layout="@layout/toolbar"/>
     <ScrollView
@@ -102,46 +102,6 @@
                     android:textSize="20sp"
                     android:textColor="#000"
                     android:hint="@string/register_teacher_city"
-                    android:textAlignment="center"
-                    android:inputType="text"
-                    android:autofillHints="" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="@color/colorFormTitles"
-                app:errorEnabled="true"
-                android:padding="30dp">
-                <EditText
-                    android:id="@+id/editText_teacher_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:textSize="20sp"
-                    android:textColor="#000"
-                    android:hint="@string/register_teacher_address"
-                    android:textAlignment="center"
-                    android:inputType="text"
-                    android:autofillHints="" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="@color/colorFormTitles"
-                app:errorEnabled="true"
-                android:padding="30dp">
-                <EditText
-                    android:id="@+id/editText_teacher_zipCode"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:textSize="20sp"
-                    android:textColor="#000"
-                    android:hint="@string/register_teacher_zipcode"
                     android:textAlignment="center"
                     android:inputType="text"
                     android:autofillHints="" />
