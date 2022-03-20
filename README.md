@@ -1,5 +1,4 @@
-# EngineeringThesis-android-app
-Application which will be learning a child  foreign languages via games
+# Android mobile application
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -9,8 +8,7 @@ Application which will be learning a child  foreign languages via games
 ## General info
 <details>
 <summary>Click here to see general information about <b>EngineeringThesis-android-app</b>!</summary>
-EngineeringThesis-android-app will be learning a child foreign languages via games
-
+EngineeringThesis-android-app will be learning a child foreign languages via games. All data will be retrieved from REST-API.
 </details>
 
 ## Technologies
